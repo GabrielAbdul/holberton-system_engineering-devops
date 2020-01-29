@@ -1,0 +1,2 @@
+#!/bin/bash
+cd /var/tmp/holberton/ rm betty \n

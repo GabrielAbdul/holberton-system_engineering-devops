@@ -1,2 +1,2 @@
 #!/bin/bash
-cd /var/tmp/ mkdir holberton \n
+mkdir /var/tmp/holberton
