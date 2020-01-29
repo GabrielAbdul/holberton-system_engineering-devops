@@ -1,3 +1,2 @@
 #!/bin/bash
-cd /var/tmp/ mv betty /var/tmp/holberton
-
+mv /tmp/betty /tmp/holberton
