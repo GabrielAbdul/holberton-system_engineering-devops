@@ -5,5 +5,5 @@ echo "Enter in commit message: "
 read commitMessage
 git commit -m "$commitMessage"
 read branch
-echo "Which branch do you want to push to? (default master)
+echo "Which branch do you want to push to? (default master)"
 git push origin $branch
