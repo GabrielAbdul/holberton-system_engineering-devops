@@ -4,6 +4,6 @@ git add -A
 echo "Enter in commit message: "
 read commitMessage
 git commit -m "$commitMessage"
-read branch
 echo "Which branch do you want to push to? (default master)"
+read branch
 git push origin $branch
