@@ -1,0 +1,16 @@
+#!/bin/bash
+
+############################################
+# Expedites adding, commit and pushing to github.
+# Promts user for commit message
+# ver 0.01
+# Author Gabriel Abdul-Raheem
+############################################
+#
+git add -A
+echo "Enter in commit message: "
+read commitMessage
+git commit -m "$commitMessage"
+echo "Which branch do you want to push to? (default master)"
+read branch
+git push origin $branch
