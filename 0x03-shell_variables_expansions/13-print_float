@@ -1,0 +1,3 @@
+#!/bin/bash
+printf "%f\n" $NUM#!/bin/bash
+printf "%f\n" $NUM
