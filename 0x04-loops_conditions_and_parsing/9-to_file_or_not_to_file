@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Bash script that displayes info about the holbertonschool file
+device="./holbertonschool"
+if [ -e $device ]; then
+	echo "holbertonschool file exists"
+	if [ ! -s $device ]; then
+		echo "holbertonschool file is empty"
+	elif [ -s $device ];  then
+		echo "holbertonschool file is not empty"
+	fi
+	if [ -f $device ]; then
+		echo "holbertonschool is a regular file"
+	fi
+elif [ ! -e $device ]; then
+	echo "holbertonschool file does not exist"
+fi
