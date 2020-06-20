@@ -5,7 +5,7 @@ file="/etc/passwd"
 
 if [ -e $file ]; then
 	i=0
-	while [ i -lt 1 ]; do
+	while [ $i -lt 1 ]; do
 		echo "."
 		((i++))
 	done
