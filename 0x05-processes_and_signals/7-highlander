@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Bash script that displays To infinity and beyond indefinitely
+
+cleanup() {
+	echo "I am invincible!!!"
+}
+trap cleanup 15
+i=0
+until [ $i -lt 0 ]; do
+	echo "To infinity and beyond"
+	sleep 2
+done
