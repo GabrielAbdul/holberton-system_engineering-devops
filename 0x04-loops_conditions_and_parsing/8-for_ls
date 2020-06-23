@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script that lists formatted contents of the current directory
+for i in *; do
+	echo "${i#*-}"
+done
