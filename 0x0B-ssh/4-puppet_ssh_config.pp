@@ -2,14 +2,13 @@
 
 file_line {'ssh_config':
     path   => '/etc/ssh/ssh_config',
-    line   => '#   PasswordAuthentication yes',
-	ensure => 'absent',
-	enable => 'present',
+    line   => 'passwordAuthentication no',
+	ensure => 'present',
 }
 
 file_line {'ssh_config_1':
     path    => '/etc/ssh/ssh_config',
-    match   => '#   IdentityFile ~/.ssh/id_rsa',
-	line    => '#   IdentityFile ~/.ssh/holberton',
+    match   => 'IdentityFile ~/.ssh/id_rsa',
+	line    => 'IdentityFile ~/.ssh/holberton',
 	enable => 'present',
 }
