@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Bash script that installs nginx on a server
+
+sudo apt-get -y install nginx
+echo "Holberton School for the win!" > /etc/var/www/index.html
+echo "server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html;
+        server_name _;
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}" > /etc/nginx/sites-available/default
+sudo systemctl restart nginx
