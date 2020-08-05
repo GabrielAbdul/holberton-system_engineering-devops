@@ -8,7 +8,6 @@ file_line {'ssh_config':
 
 file_line {'ssh_config_1':
     path    => '/etc/ssh/ssh_config',
-    match   => 'IdentityFile ~/.ssh/id_rsa',
 	line    => 'IdentityFile ~/.ssh/holberton',
-	enable => 'present',
+	ensure  => 'present',
 }
