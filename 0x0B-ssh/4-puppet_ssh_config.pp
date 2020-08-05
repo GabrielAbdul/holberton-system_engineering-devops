@@ -2,7 +2,7 @@
 
 file_line {'ssh_config':
     path   => '/etc/ssh/ssh_config',
-    line   => 'passwordAuthentication no',
+    line   => 'PasswordAuthentication no',
 	ensure => 'present',
 }
 
