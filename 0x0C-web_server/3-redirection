@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Bash script that installs nginx on a server with 301 redirection
+
+sudo apt-get update
+sudo apt-get -y install nginx
+echo "Holberton School for the win!" > /var/www/index.html
+echo "server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html;
+        server_name _;
+        location / {
+                try_files $uri $uri/ =404;
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4
+        }
+}" > /etc/nginx/sites-available/default
+sudo service nginx start
