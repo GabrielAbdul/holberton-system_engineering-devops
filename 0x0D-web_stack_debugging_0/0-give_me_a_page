@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Installs apache2, restarts service
+
+sudo service apache2 restart
