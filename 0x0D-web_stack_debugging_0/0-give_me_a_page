@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Installs apache2, restarts service
+# restarts apache2 service
 
-sudo service apache2 restart
+service apache2 restart
