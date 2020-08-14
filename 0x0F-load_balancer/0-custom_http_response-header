@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# script that configures web servers
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo echo 'Holberton School is awesome!' > /var/www/html/index.html
+sudo echo Ceci nest pas une page > /var/www/html/custom_404.html
+sudo -i sed '/^\tserver_name*/a\\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo -i sed '/^\tserver_name*/a\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /var/www/html/;\n\t\tinternal;\n\t}' /etc/nginx/sites-available/default
+sudo -i sed '/^\tserver_name*/a\\trewrite ^\/redirect_me https:\/\/gabrielabdul.tech/ permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
