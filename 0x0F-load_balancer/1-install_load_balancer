@@ -12,8 +12,9 @@ frontend front_server
 	default_backend backend_server
 backend backend_server
 	balance roundrobin
-	server 1647-web-01 104.196.165.127:80
-	server 1647-web-02 34.230.11.25:80
+	server 1647-web-01 104.196.165.127:80 check
+	server 1647-web-02 34.230.11.25:80 check
+
 EOF
 
 echo "ENABLED=1" >> /etc/default/haproxy
