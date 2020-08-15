@@ -1,3 +1,4 @@
+# custom HTTP header response
 package {'haproxy':
     ensure  => installed,
     version => '1.6.3',
