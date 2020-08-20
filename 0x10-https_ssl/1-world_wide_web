@@ -8,10 +8,10 @@ if [ $# -lt 2 ]; then
 	do
 		type="$(dig "$sub_domain.$1" | grep -A1 'ANSWER SECTION' | awk '{print $4}' | tr -d '\n')"
 		ip="$(dig "$sub_domain.$1" | grep -A1 'ANSWER SECTION' | awk '{print $5}' | tr -d '\n')"
-		echo "The subdomain $sub_domain is a $type and points to $ip"
+		echo "The subdomain $sub_domain is a $type record and points to $ip"
 	done
 else
 	type="$(dig "$2.$1" | grep -A1 'ANSWER SECTION' | awk '{print $4}' | tr -d '\n')"
 	ip="$(dig "$2.$1" | grep -A1 'ANSWER SECTION' | awk '{print $5}' | tr -d '\n')"
-	echo "The subdomain $2 is a $type and points to $ip"
+	echo "The subdomain $2 is a $type record and points to $ip"
 fi
