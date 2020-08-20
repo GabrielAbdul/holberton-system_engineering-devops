@@ -13,9 +13,9 @@ global
         crt-base /etc/ssl/private
 
         # Default ciphers to use on SSL-enabled listening sockets.
-        # For more information, see ciphers(1SSL). This list is from:
-        #  https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
-        ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:R$        ssl-default-bind-options no-sslv3
+        # For more information, see ciphers(1SSL). This list is from:        #  https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
+        ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
+        ssl-default-bind-options no-sslv3
 
 defaults
         log     global
@@ -36,9 +36,6 @@ defaults
 frontend front_server
         bind *:80
         bind *:443 ssl crt /etc/haproxy/certs/gabrielabdul.tech.pem
-        reqadd X-Forwarded-Proto:\ https
-        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-        use_backend letsencrypt-backend if letsencrypt-acl
         mode http
         default_backend backend_server
 
