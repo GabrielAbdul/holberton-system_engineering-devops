@@ -9,10 +9,10 @@ if __name__ == '__main__':
     from sys import argv
 
     u_id = argv[1]
-    url = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(u_id)
+    url = 'https://jsonplaceholder.typicode.com/todos/?userId={}'.format(u_id)
     url_for_name = 'https://jsonplaceholder.typicode.com/users/{}'.format(u_id)
     r = requests.get(url)
-    name = requests.get(url_for_name).json().get('name')
+    name = requests.get(url_for_name).json().get('username')
 
     with open('{}.csv'.format(u_id), mode='w') as f:
         w = csv.writer(f, quotechar='"', quoting=csv.QUOTE_ALL)
