@@ -23,7 +23,7 @@ if __name__ == '__main__':
     for ids in list_ids:
         task_dict = [{'username': return_name(ids),
                      'task': task.get('title'),
-                        'completed': task.get('completed')} for task in tasks]
+                      'completed': task.get('completed')} for task in tasks]
         print(task_dict)
         return_dict.update({ids: task_dict})
     file_name = 'todo_all_employees.json'
