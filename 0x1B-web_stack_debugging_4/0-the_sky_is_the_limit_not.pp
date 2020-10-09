@@ -1,6 +1,7 @@
 # Sky is the limit, let's bring that limit higher
+
 exec { 'replace files per process':
-  command => "sudo sed -i 's/worker_processes 4/worker_processes 2048/g' /etc/nginx/nginx.conf",
+  command => "sudo sed -i '/^ULIMIT/s/^/#/g' /etc/default/nginx",
   path    =>   ['/bin', '/usr/bin'],
 }
 exec {'restart nginx service':
